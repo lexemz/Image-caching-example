@@ -10,11 +10,12 @@ import UIKit
 class ViewController: UITableViewController {
     
     private var contacts: [Contact] = []
-    private let requestURL = "https://randomuser.me/api/?results=50"
+    private let requestURL = "https://randomuser.me/api/?results=100"
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.rowHeight = 100
         fetchContacts()
     }
 
@@ -41,7 +42,17 @@ class ViewController: UITableViewController {
         let contactForCell = contacts[indexPath.row]
         content.text = contactForCell.name.fullName
         
+        DispatchQueue.global().async {
+            if let url = URL(string: contactForCell.picture.large), let imageData = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    content.image = UIImage(data: imageData)
+                    cell.contentConfiguration = content
+                }
+            }
+        }
+        
         cell.contentConfiguration = content
+        
         return cell
     }
 
