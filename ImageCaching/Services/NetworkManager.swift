@@ -45,4 +45,23 @@ class NetworkManager {
             }
         }.resume()
     }
+    
+    func fetchImage(from url: URL, completionHandler: @escaping(Data, URLResponse) -> Void) {
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, let response = response else {
+                print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            
+            // Проверка совпадения адреса запрашиваемой ячейки с адресом вернувшийся картинки
+            guard url == response.url else {
+                return
+            }
+            
+            // Возврат значения и ответа от сервера
+            DispatchQueue.main.async {
+                completionHandler(data, response)
+            }
+        }.resume()
+    }
 }

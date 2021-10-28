@@ -37,21 +37,10 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath)
-        var content = cell.defaultContentConfiguration()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! TableViewCell
         let contactForCell = contacts[indexPath.row]
-        content.text = contactForCell.name.fullName
         
-        DispatchQueue.global().async {
-            if let url = URL(string: contactForCell.picture.large), let imageData = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    content.image = UIImage(data: imageData)
-                    cell.contentConfiguration = content
-                }
-            }
-        }
-        
-        cell.contentConfiguration = content
+        cell.configure(for: contactForCell)
         
         return cell
     }
