@@ -51,8 +51,18 @@
 			isa = PBXGroup;
 			children = (
 				78868543272AB09200FA1AD7 /* CustomImageView.swift */,
+				78A289EE273180B000621586 /* ContactViewCell */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		78A289EE273180B000621586 /* ContactViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				78A289C127317B2300621586 /* ContactViewCell.swift */,
+				78A289C227317B2300621586 /* ContactViewCell.xib */,
+			);
+			path = ContactViewCell;
 			sourceTree = "<group>";
 		};
 		78B1C9242726BC0A0080AA0D = {
@@ -81,8 +91,6 @@
 				78B1C9442726BC3D0080AA0D /* Storyboards */,
 				78B1C9452726BC4A0080AA0D /* App */,
 				78B1C9392726BC0D0080AA0D /* Assets.xcassets */,
-				78A289C127317B2300621586 /* ContactViewCell.swift */,
-				78A289C227317B2300621586 /* ContactViewCell.xib */,
 			);
 			path = ImageCaching;
 			sourceTree = "<group>";
