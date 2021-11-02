@@ -1,16 +1,23 @@
 //
-//  TableViewCell.swift
+//  ContactViewCell.swift
 //  ImageCaching
 //
-//  Created by Igor on 28.10.2021.
+//  Created by Igor on 02.11.2021.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class ContactViewCell: UITableViewCell {
 
     @IBOutlet var imageViewForCell: CustomImageView!
     @IBOutlet var mainLabel: UILabel!
+    
+    static let cellID = "contactCell"
+    
+    static func nib() -> UINib {
+        UINib(nibName: "ContactViewCell", bundle: nil)
+        // nibName - name of class!
+    }
     
     func configure(for contast: Contact) {
         mainLabel.text = contast.name.fullName

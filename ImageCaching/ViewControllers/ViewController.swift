@@ -16,6 +16,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
 
         tableView.rowHeight = 100
+        tableView.register(ContactViewCell.nib(), forCellReuseIdentifier: ContactViewCell.cellID)
         fetchContacts()
     }
 
@@ -37,7 +38,7 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "contactCell", for: indexPath) as! TableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: ContactViewCell.cellID, for: indexPath) as! ContactViewCell
         let contactForCell = contacts[indexPath.row]
         
         cell.configure(for: contactForCell)

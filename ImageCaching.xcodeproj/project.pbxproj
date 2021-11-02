@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		78868542272AAD4200FA1AD7 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78868541272AAD4200FA1AD7 /* TableViewCell.swift */; };
 		78868544272AB09200FA1AD7 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78868543272AB09200FA1AD7 /* CustomImageView.swift */; };
+		78A289C327317B2300621586 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A289C127317B2300621586 /* ContactViewCell.swift */; };
+		78A289C427317B2300621586 /* ContactViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78A289C227317B2300621586 /* ContactViewCell.xib */; };
 		78B1C9312726BC0A0080AA0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1C9302726BC0A0080AA0D /* AppDelegate.swift */; };
 		78B1C9332726BC0A0080AA0D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1C9322726BC0A0080AA0D /* SceneDelegate.swift */; };
 		78B1C9352726BC0A0080AA0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78B1C9342726BC0A0080AA0D /* ViewController.swift */; };
@@ -20,8 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		78868541272AAD4200FA1AD7 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		78868543272AB09200FA1AD7 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		78A289C127317B2300621586 /* ContactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
+		78A289C227317B2300621586 /* ContactViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactViewCell.xib; sourceTree = "<group>"; };
 		78B1C92D2726BC0A0080AA0D /* ImageCaching.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageCaching.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78B1C9302726BC0A0080AA0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78B1C9322726BC0A0080AA0D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +50,6 @@
 		78868540272AAD2D00FA1AD7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				78868541272AAD4200FA1AD7 /* TableViewCell.swift */,
 				78868543272AB09200FA1AD7 /* CustomImageView.swift */,
 			);
 			path = Views;
@@ -73,13 +74,15 @@
 		78B1C92F2726BC0A0080AA0D /* ImageCaching */ = {
 			isa = PBXGroup;
 			children = (
-				78868540272AAD2D00FA1AD7 /* Views */,
 				78B1C9462726BC550080AA0D /* ViewControllers */,
+				78868540272AAD2D00FA1AD7 /* Views */,
 				78B1C94B2726C4260080AA0D /* Models */,
 				78B1C94C2726C42D0080AA0D /* Services */,
 				78B1C9442726BC3D0080AA0D /* Storyboards */,
 				78B1C9452726BC4A0080AA0D /* App */,
 				78B1C9392726BC0D0080AA0D /* Assets.xcassets */,
+				78A289C127317B2300621586 /* ContactViewCell.swift */,
+				78A289C227317B2300621586 /* ContactViewCell.xib */,
 			);
 			path = ImageCaching;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				78B1C93D2726BC0D0080AA0D /* LaunchScreen.storyboard in Resources */,
 				78B1C93A2726BC0D0080AA0D /* Assets.xcassets in Resources */,
 				78B1C9382726BC0A0080AA0D /* Main.storyboard in Resources */,
+				78A289C427317B2300621586 /* ContactViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,9 +206,9 @@
 				78B1C9352726BC0A0080AA0D /* ViewController.swift in Sources */,
 				78B1C94A2726BF5A0080AA0D /* NetworkManager.swift in Sources */,
 				78868544272AB09200FA1AD7 /* CustomImageView.swift in Sources */,
-				78868542272AAD4200FA1AD7 /* TableViewCell.swift in Sources */,
 				78B1C9312726BC0A0080AA0D /* AppDelegate.swift in Sources */,
 				78B1C9332726BC0A0080AA0D /* SceneDelegate.swift in Sources */,
+				78A289C327317B2300621586 /* ContactViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
