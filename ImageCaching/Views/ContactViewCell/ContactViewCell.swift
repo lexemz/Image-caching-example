@@ -16,7 +16,7 @@ class ContactViewCell: UITableViewCell {
     
     static func nib() -> UINib {
         UINib(nibName: "ContactViewCell", bundle: nil)
-        // nibName - name of class!
+        // nibName - xib file name!
     }
     
     func configure(for contast: Contact) {
