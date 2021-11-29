@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UITableViewController {
-    
     private var contacts: [Contact] = []
     private let requestURL = "https://randomuser.me/api/?results=100"
 
@@ -21,29 +20,27 @@ class ViewController: UITableViewController {
     }
 
     private func fetchContacts() {
-        NetworkManager.shared.fetchContacts(stringWithUrl: requestURL) { result in
+        NetworkManager.shared.fetch(stringWithUrl: requestURL, model: Results.self) { result in
             switch result {
-                
-            case .success(let contacts):
-                self.contacts = contacts
+            case .success(let result):
+                self.contacts = result.results
                 self.tableView.reloadData()
             case .failure(let error):
                 print(error.localizedDescription)
             }
         }
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         contacts.count
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: ContactViewCell.cellID, for: indexPath) as! ContactViewCell
         let contactForCell = contacts[indexPath.row]
-        
+
         cell.configure(for: contactForCell)
-        
+
         return cell
     }
-
 }

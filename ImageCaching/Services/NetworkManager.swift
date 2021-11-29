@@ -18,7 +18,7 @@ class NetworkManager {
     
     private init() {}
     
-    func fetchContacts(stringWithUrl string: String, completionHandler: @escaping (Result<[Contact], NetworkManagerErrors>) -> Void) {
+    func fetch<T>(stringWithUrl string: String, model: T.Type, completionHandler: @escaping (Result<T, NetworkManagerErrors>) -> Void) where T: Decodable {
         print("manager is runned")
         guard let url = URL(string: string) else {
             completionHandler(.failure(.badUrl))
@@ -33,11 +33,10 @@ class NetworkManager {
             }
 
             do {
-                let result = try JSONDecoder().decode(Results.self, from: data)
-                let contacts = result.results
+                let result = try JSONDecoder().decode(T.self, from: data)
                 
                 DispatchQueue.main.async {
-                    completionHandler(.success(contacts))
+                    completionHandler(.success(result))
                 }
             } catch let error {
                 print(error.localizedDescription)
